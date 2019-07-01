@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="App">
+  <head>
+    <title>Page</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="codemirror.css">
+
+    <script src="jquery.min.js"></script>
+    <script src="codemirror.js"></script>
+    <script src="javascript.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="angular-sanitize.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="HomeCtrl" class="col-md-12">
+    <h1>{{title}}</h1>
+    <h2>{{subtitle}}</h2>
+
+    <div class="container col-md-12">
+      <div class="row col-md-12 capture-ctrl-enter">
+        <textarea id="input" class="input one" placeholder="Javascript..." ng-model="input"></textarea>
+      </div>
+      <a id="download" download="{{prompt('File name? ', 'Unitled.js')}}" ng-click="download()">Download As</a>
+      <div class="row col-md-12">
+        <output class="output one">{{output}}</output>
+      </div>
+    </div>
+  </body>
+</html>
