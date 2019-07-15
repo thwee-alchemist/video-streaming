@@ -13,12 +13,20 @@ const server = app.listen(port, function(){
 
 const io = require('socket.io')(server);
 
-io.on('connected', (socket) => {
-  console.log('a page connected', socket.url);
-})
 
-
-
-
+io.on('connection', (socket) => {
+  console.log('a page connected');
+  if(socket.handshake.headers.referer == 'http://localhost:8000/feed/'){
+    console.log('feed connected');
+    socket.on('playback', (data) => {
+      // console.log('data received')
+  
+      socket.broadcast.emit('playback', data)
+    })
+  }else{
+    console.log('stream connected')
+    
+  }
+});
 
 module.exports = server;
