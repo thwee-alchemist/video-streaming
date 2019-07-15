@@ -1,7 +1,7 @@
 {
-  "name": "brick-road",
+  "name": "page",
   "version": "0.0.1",
-  "description": "A map of Hirschi Masonry",
+  "description": "A page template for developing Single Page Applications",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -15,16 +15,14 @@
     "url": "."
   },
   "keywords": [
-    "Map",
-    "Hirschi",
-    "Masonry"
+    "Page",
+    "Template"
   ],
-  "author": "jmoore@hirschimasonry.com",
+  "author": "joshua.moore@leudla.net",
   "license": "MIT",
   "dependencies": {
     "angular-sanitize": "^1.7.8",
     "bootstrap": "^4.3.1",
-    "codemirror": "^5.48.0",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "yargs": "^13.2.4"
