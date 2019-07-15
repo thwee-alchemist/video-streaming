@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html ng-app="App">
+<html ng-app="feedApp">
   <head>
-    <title>Stream</title>
+    <title>Feed</title>
     <link rel="stylesheet" href="/common/bootstrap.min.css">
     <link rel="stylesheet" href="/common/app.css">
 
+    <script src="/common/jquery.min.js"></script>
     <script src="/common/bootstrap.bundle.min.js"></script>
     <script src="/common/angular.min.js"></script>
     <script src="/common/angular-sanitize.min.js"></script>
     <script src="/common/socket.io.js"></script>
     <script src="app.js"></script>
   </head>
-  <body ng-controller="HomeCtrl">
+  <body ng-controller="FeedCtrl">
     <div class="container col-md-12">
       <h1>Losee Rd Webcam</h1>
 
+      <video id="playback" width="500" height="300"></video>
 
-   </div>
+      
+    </div>
   </body>
 </html>

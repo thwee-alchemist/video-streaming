@@ -1,23 +1,24 @@
 const express = require('express');
 const app = express();
-const yargs = require('yargs')
+const port = 8000;
 
-const argv = yargs
-  .option('port', {
-    alias: 'p',
-    description: 'specifies to port to listen on',
-    type: 'number'
-  })
-  .help()
-  .alias('help', 'h')
-  .argv;
-
+app.use('/common', express.static('common'));
 app.use('/', express.static('public'));
+app.use('/feed', express.static('private'));
 
-const desiredPort = argv.port !== undefined ? argv.port : 8000;
-const server = app.listen(desiredPort, function(){
+const server = app.listen(port, function(){
   var port = server.address().port;
   console.log(`Listening on port ${port}`);
+});
+
+const io = require('socket.io')(server);
+
+io.on('connected', (socket) => {
+  console.log('a page connected', socket.url);
 })
+
+
+
+
 
 module.exports = server;
