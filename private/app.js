@@ -11,7 +11,7 @@ feedApp.controller('FeedCtrl', ['$scope', function($scope){
   canvas.height = video.height;
   var context = canvas.getContext('2d')
 
-  var socket = io('https://theplants.herokuapp.com/');
+  var socket = io('https://theplants.herokuapp.com');
   
 
   function grab() {
