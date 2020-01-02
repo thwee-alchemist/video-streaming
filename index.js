@@ -16,7 +16,8 @@ const io = require('socket.io')(server);
 
 io.on('connection', (socket) => {
   console.log('a page connected');
-  if(socket.handshake.headers.referer == 'http://localhost:8000/feed/'){
+
+  if(socket.handshake.headers.referer.endsWith('feed')){
     console.log('feed connected');
     socket.on('playback', (data) => {
       // console.log('data received')
