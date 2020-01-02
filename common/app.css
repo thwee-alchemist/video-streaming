@@ -1,5 +1,7 @@
 .fullscreen {
   height: 100%;
   image-rendering: auto;
-  
+  position: center;
+  mask-repeat: no-repeat;
+  mask-size: cover;
 }
